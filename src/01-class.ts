@@ -1,3 +1,18 @@
+const date = new Date();
+date.getHours();
+date.getTime();
+date.toISOString();
+
+const date2 = new Date(1993, 1, 12); // 0 enero 11 dic
+date2.getHours();
+date2.getTime();
+date2.toISOString();
+
+console.log(date);
+console.log(date2);
+
+let myVar;
+
 export class MyDate {
   year: number;
   month: number;
@@ -8,30 +23,7 @@ export class MyDate {
     this.month = month;
     this.day = day;
   }
-
-  printFormat(): string {
-    return `${this.day}/${this.month}/${this.year}`;
-  }
-
-  add(amount: number, type: 'days' | 'months' | 'years') {
-    if (type === 'days') {
-      this.day += amount;
-    }
-    if (type === 'months') {
-      this.month += amount;
-    }
-    if (type === 'years') {
-      this.year += amount;
-    }
-  }
 }
 
-const myDate = new MyDate(1993, 7, 9);
-console.log(myDate.printFormat());
-myDate.add(3, 'days');
-console.log(myDate.printFormat());
-myDate.add(1, 'months');
-console.log(myDate.printFormat());
-console.log(myDate.day);
-console.log(myDate.month);
-console.log(myDate.year);
+const myDate = new MyDate(2021, 3, 13);
+console.log(myDate);

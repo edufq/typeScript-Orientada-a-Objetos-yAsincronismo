@@ -1,13 +1,10 @@
 export class MyDate {
-  year: number;
-  month: number;
-  private day: number;
 
-  constructor(year: number, month: number, day: number) {
-    this.year = year;
-    this.month = month;
-    this.day = day;
-  }
+  constructor(
+    public year: number = 1993,
+    public month: number = 7,
+    private day: number = 9
+  ) {}
 
   printFormat(): string {
     const day = this.addPadding(this.day);
@@ -42,3 +39,12 @@ export class MyDate {
 const myDate = new MyDate(1993, 7, 10);
 console.log(myDate.printFormat());
 console.log(myDate.getDay());
+
+const myDate2 = new MyDate();
+console.log('() =>',myDate2.printFormat());
+
+const myDate3 = new MyDate(2022);
+console.log('(2022) =>', myDate3.printFormat());
+
+const myDate4 = new MyDate(2022, 3);
+console.log('(2022, 3) =>', myDate4.printFormat());
